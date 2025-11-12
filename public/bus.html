@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bystand offical website</title>
+  <link rel="icon" type="image/png" href="logos.png">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Bystand</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#routes">Routes</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+        <li><a href="#admin">Admin</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <img src="logos.png">
+    <h3>Where your bus meets your time.</h3>
+    <p>@Track your city buses live on map, know the ETA and reach on time.</p>
+    <button onclick="scrollToRoutes()">View Routes</button>
+  </section>
+  <hr>
+
+  <section class="map-section">
+    <h2>Live Bus Map</h2>
+    <center>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497511.2310519289!2d79.87898718519027!3d13.047985950034926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1754831495783!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </center>
+  </section>
+  <hr>
+
+  <section class="routes" id="routes">
+    <h2>Search Bus Routes</h2>
+    <input type="text" id="routeSearch" placeholder="Search Route..." onkeyup="searchRoutes()" />
+    <div class="route-list" id="routeList">
+      <div class="route-card">Route 101: Central ↔ poonamallee</div>
+      <div class="route-card">Route 72: Thiruverkadu ↔ T Nagar</div>
+      <div class="route-card">Route 62: poonamallee ↔ Redhills</div>
+      <div class="route-card">Route 25: poonamallee ↔ merina Beach</div>
+      <div class="route-card">Route 104C: koyembedu ↔ kilambakkam</div>
+      <div class="route-card">Route 153A: thiruvallur ↔ koyembedu</div>
+      <div class="route-card">Route 578: sunguvachathuram ↔ poonamallee</div>
+      <div class="route-card">Route 153P: perampakkam ↔ koyembedu</div>
+      <div class="route-card">Route 70v: kilambakkam ↔ koyembedu</div>
+    </div>
+  </section>
+  <hr>
+
+  <section class="ticket" id="tickets">
+    <h2>Buy Tickets</h2>
+    <form onsubmit="generateQRCode(event)">
+      <input type="text" placeholder="Your Name" id="name" required />
+      <input type="text" placeholder="Route" id="route" required />
+      <button type="submit">Generate Ticket </a></button>
+      </div>
+      <div class="qr-box">
+      <img src="bystand.png" alt="Booking Now"  style="width:100px; height:100px;">
+      </div>
+    </form>
+  </section>
+  <hr>
+  <section class="admin" id="admin">
+    <h2>Admin Login</h2>
+    <form onsubmit="adminLogin(event)">
+      <input type="text" id="adminUser" placeholder="Username" required />
+      <input type="password" id="adminPass" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div id="adminDashboard" style="display:none;">
+      <h3>Admin Dashboard</h3>
+      <p>Total Buses: 25</p>
+      <p>Active Routes: 15</p>
+    </div>
+  </section>
+  <hr>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CityBus Tracker. All copyrights reserved.</p>
+    <p>@facebook|@instagram|@customer care 24*7</p>
+  </footer>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+  <script src="java.js"></script>
+</body>
+</html>
